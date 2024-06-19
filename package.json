@@ -1,6 +1,6 @@
 {
-  "name": "logseq-plugin-gpt3-openai",
-  "author": "Brian Sunter",
+  "name": "logseq-plugin-llama3-groq",
+  "author": "Miguel Bernadin",
   "private": true,
   "version": "1.13.2",
   "main": "dist/index.html",

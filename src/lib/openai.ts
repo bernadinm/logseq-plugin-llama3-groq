@@ -127,7 +127,7 @@ export async function openAI(
 
   const openai = new OpenAIApi(configuration);
   try {
-    if (engine.startsWith("gpt-3.5") || engine.startsWith("gpt-4")) {
+    if (engine.startsWith("gpt-3.5") || engine.startsWith("gpt-4") || engine.startsWith("llama")) {
       const inputMessages:ChatCompletionRequestMessage[] =  [{ role: "user", content: input }];
       if (openAiOptions.chatPrompt && openAiOptions.chatPrompt.length > 0) {
         inputMessages.unshift({ role: "system", content: openAiOptions.chatPrompt });
@@ -203,7 +203,7 @@ export async function openAIWithStream(
   const engine = options.completionEngine!;
 
   try {
-    if (engine.startsWith("gpt-3.5") || engine.startsWith("gpt-4")) {
+    if (engine.startsWith("gpt-3.5") || engine.startsWith("gpt-4") || engine.startsWith("llama")) {
       const inputMessages: ChatCompletionRequestMessage[] = [{ role: "user", content: input }];
       if (openAiOptions.chatPrompt && openAiOptions.chatPrompt.length > 0) {
         inputMessages.unshift({ role: "system", content: openAiOptions.chatPrompt });
@@ -277,7 +277,7 @@ export async function openAIWithStream(
       }
     } else {
       const body = {
-        messages: inputMessages,
+        prompt: input,
         temperature: options.temperature,
         max_tokens: options.maxTokens,
         top_p: 1,
