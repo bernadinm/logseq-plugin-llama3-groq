@@ -10,23 +10,23 @@ export const settingsSchema: SettingSchemaDesc[] = [
     key: "openAIKey",
     type: "string",
     default: "",
-    title: "OpenAI API Key",
+    title: "Groq API Key",
     description:
-      "Your OpenAI API key. You can get one at https://beta.openai.com",
+      "Your Groq API key. You can get one at https://console.groq.com/keys",
   },
   {
     key: "openAICompletionEngine",
     type: "string",
-    default: "gpt-3.5-turbo",
-    title: "OpenAI Completion Engine",
-    description: "See Engines in OpenAI docs.",
+    default: "llama3-70b-8192",
+    title: "Groq Model ID Completion Engine",
+    description: "See Engines in Groq docs.",
   },
   {
     key: "chatCompletionEndpoint",
     type: "string",
-    default: "http://api.openai.com/v1",
-    title: "OpenAI API Completion Endpoint",
-    description: "The endpoint to use for OpenAI API completion requests. You shouldn't need to change this."
+    default: "http://api.groq.com/openai/v1/chat",
+    title: "Groq API Completion Endpoint",
+    description: "The endpoint to use for OpenAI compatible API completion requests. You shouldn't need to change this."
   },
   {
     key: "chatPrompt",
@@ -39,7 +39,7 @@ export const settingsSchema: SettingSchemaDesc[] = [
     key: "openAITemperature",
     type: "number",
     default: 1.0,
-    title: "OpenAI Temperature",
+    title: "LLM Temperature",
     description:
       "The temperature controls how much randomness is in the output.<br/>"+
       "You can set a different temperature in your own prompt templates by adding a 'prompt-template' property to the block.",
@@ -48,7 +48,7 @@ export const settingsSchema: SettingSchemaDesc[] = [
     key: "openAIMaxTokens",
     type: "number",
     default: 1000,
-    title: "OpenAI Max Tokens",
+    title: "LLM Max Tokens",
     description:
       "The maximum amount of tokens to generate. Tokens can be words or just chunks of characters. The number of tokens processed in a given API request depends on the length of both your inputs and outputs. As a rough rule of thumb, 1 token is approximately 4 characters or 0.75 words for English text. One limitation to keep in mind is that your text prompt and generated completion combined must be no more than the model's maximum context length (for most models this is 2048 tokens, or about 1500 words).",
   },

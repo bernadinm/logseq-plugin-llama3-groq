@@ -277,7 +277,7 @@ export async function openAIWithStream(
       }
     } else {
       const body = {
-        prompt: input,
+        messages: inputMessages,
         temperature: options.temperature,
         max_tokens: options.maxTokens,
         top_p: 1,
